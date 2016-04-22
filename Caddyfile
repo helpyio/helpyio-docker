@@ -1,0 +1,9 @@
+localhost.localdomain:80 {
+  tls off
+  proxy / helpy:8080/ {
+    proxy_header Host {host}
+    proxy_header X-Real-IP {remote}
+    proxy_header X-Forwarded-Proto {scheme}
+  }
+  log stdout
+}

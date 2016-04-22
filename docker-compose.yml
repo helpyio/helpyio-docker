@@ -1,0 +1,39 @@
+version: '2'
+
+services:
+  frontend:
+    image: webwurst/caddy
+    volumes:
+      - ./Caddyfile:/Caddyfile
+      - ./certs:/root/.caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - front
+    depends_on:
+      - helpy
+  helpy:
+    build: .
+    restart: always
+    networks:
+      - front
+      - back
+    env_file: .env
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:9.4
+    restart: always
+    networks:
+      - back
+    env_file: .env
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+
+networks:
+  front:
+    driver: bridge
+  back:
+    driver: bridge
