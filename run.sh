@@ -26,4 +26,4 @@ if [ ! -f /helpy/run_has_run ]
     touch /helpy/run_has_run
 fi
 
-exec unicorn
+exec bundle exec unicorn -E production -c config/unicorn.rb
