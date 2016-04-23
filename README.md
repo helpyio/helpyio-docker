@@ -8,6 +8,9 @@ This repository contains the neccessary files to run your own helpy.io instance.
 - wait for dns change propagation
 - run `docker-compose up -d`
 
+### What do you need to know
+- If you set `DO_NOT_PREPARE=true` in the `.env` file, asset precompilation and database migrations will be skipped
+
 ### What does not work? (aka Todo)
-- cloudinary (COPY in Dockerfile)
 - Email is untested
+- Caddy static gzip
