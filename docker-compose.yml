@@ -24,6 +24,8 @@ services:
     volumes:
       - rails-assets:/helpy/public/assets
     env_file: .env
+    #environment:
+    #  - DO_NOT_PREPARE=true
     depends_on:
       - postgres
   postgres:

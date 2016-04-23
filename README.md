@@ -14,3 +14,4 @@ This repository contains the neccessary files to run your own helpy.io instance.
 ### What does not work? (aka Todo)
 - Email is untested
 - Caddy static gzip
+- Mailin Container
