@@ -1,5 +1,7 @@
 FROM ruby:2.2.1
 
+ENV HELPY_VERSION 0.9.1
+
 ENV RAILS_VERSION 4.2.6
 ENV RAILS_ENV production
 ENV HELPY_HOME /helpy
@@ -16,7 +18,7 @@ WORKDIR $HELPY_HOME
 
 USER $HELPY_USER
 
-RUN git clone --depth=1 https://github.com/helpyio/helpy.git .
+RUN git clone --branch $HELPY_VERSION --depth=1 https://github.com/helpyio/helpy.git .
 
 RUN bundle install
 
