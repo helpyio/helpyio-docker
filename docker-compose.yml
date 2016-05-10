@@ -13,6 +13,7 @@ services:
       - "443:443"
     networks:
       - front
+    restart: always
     depends_on:
       - helpy
   helpy:
