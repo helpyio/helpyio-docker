@@ -24,9 +24,9 @@ RUN_PREPARE=${DO_NOT_PREPARE:-false}
 if [[ "$RUN_PREPARE" = "false" ]]
   then
     echo "DO_NOT_PREPARE is not set or is false, preparing.."
-    rake assets:precompile
-    rake db:migrate
-    rake db:seed || echo "db is already seeded"
+    bundle exec rake assets:precompile
+    bundle exec rake db:migrate
+    bundle exec rake db:seed || echo "db is already seeded"
 fi
 
 echo "starting unicorn"
