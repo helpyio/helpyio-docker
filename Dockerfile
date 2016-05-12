@@ -5,6 +5,7 @@ ENV HELPY_VERSION 0.9.2
 ENV RAILS_ENV production
 ENV HELPY_HOME /helpy
 ENV HELPY_USER helpyuser
+ENV HELPY_SLACK_INTEGRATION_ENABLED true
 
 RUN apt-get update \
   && apt-get upgrade -y \
@@ -22,6 +23,10 @@ RUN git clone --branch $HELPY_VERSION --depth=1 https://github.com/helpyio/helpy
 
 # modify Gemfile to remove the line which says 'ruby "2.2.1"' to use a newer ruby version
 RUN sed -i '/ruby "2.2.1"/d' $HELPY_HOME/Gemfile
+
+# add the slack integration gem to the Gemfile if the HELPY_SLACK_INTEGRATION_ENABLED is true
+# use `test` for sh compatibility, also use only one `=`. also for sh compatibility
+RUN test "$HELPY_SLACK_INTEGRATION_ENABLED" = "true" && sed -i '$ a\gem "helpy_slack", github: "helpyio/helpy_slack", branch: "master"' $HELPY_HOME/Gemfile
 
 RUN bundle install
 
