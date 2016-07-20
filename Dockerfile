@@ -1,11 +1,10 @@
 FROM ruby:2.2
 
-ENV HELPY_VERSION 0.10
-
-ENV RAILS_ENV production
-ENV HELPY_HOME /helpy
-ENV HELPY_USER helpyuser
-ENV HELPY_SLACK_INTEGRATION_ENABLED true
+ENV HELPY_VERSION=0.10.1.1 \
+    RAILS_ENV=production \
+    HELPY_HOME=/helpy \
+    HELPY_USER=helpyuser \
+    HELPY_SLACK_INTEGRATION_ENABLED=true
 
 RUN apt-get update \
   && apt-get upgrade -y \
