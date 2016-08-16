@@ -1,6 +1,6 @@
 FROM ruby:2.2
 
-ENV HELPY_VERSION=0.10.1.1 \
+ENV HELPY_VERSION=0.10.2 \
     RAILS_ENV=production \
     HELPY_HOME=/helpy \
     HELPY_USER=helpyuser \
