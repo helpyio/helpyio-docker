@@ -1,6 +1,6 @@
 FROM ruby:2.2
 
-ENV HELPY_VERSION=0.10.2 \
+ENV HELPY_VERSION=1.0 \
     RAILS_ENV=production \
     HELPY_HOME=/helpy \
     HELPY_USER=helpyuser \
@@ -8,7 +8,7 @@ ENV HELPY_VERSION=0.10.2 \
 
 RUN apt-get update \
   && apt-get upgrade -y \
-  && apt-get install -y nodejs postgresql-client --no-install-recommends \
+  && apt-get install -y nodejs postgresql-client imagemagick --no-install-recommends \
   && rm -rf /var/lib/apt/lists/* \
   && useradd --no-create-home $HELPY_USER \
   && mkdir -p $HELPY_HOME \
