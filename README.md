@@ -1,3 +1,7 @@
+# MAINTAINER NEEDED!
+
+We are looking for a new maintainer for docker container.  Please join us in Slack if you can help! https://helpyioslackin.herokuapp.com/
+
 # Docker Compose Setup for Helpy.io
 
 This repository contains the neccessary files to run your own helpy.io instance. Thanks to Caddy and let's encrypt, everything is https encrypted (if you have a domain)
