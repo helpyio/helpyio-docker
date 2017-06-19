@@ -1,6 +1,4 @@
-# MAINTAINER NEEDED!
-
-We are looking for a new maintainer for docker container.  Please join us in Slack if you can help! https://helpyioslackin.herokuapp.com/
+ATTENTION: THIS HAS NOW BEEN MERGED INTO THE CORE HELPY PROJECT.  FUTURE UPDATES WILL OCCUR THERE.
 
 # Docker Compose Setup for Helpy.io
 
